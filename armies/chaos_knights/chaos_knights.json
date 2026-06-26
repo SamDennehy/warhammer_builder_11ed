@@ -1,0 +1,486 @@
+{
+  "faction": "Chaos Knights",
+
+  "detachments" : [
+    { "id": "infernal_lance",
+      "name": "Infernal Lance",
+
+      "rule": "malefic_surge",
+
+      "enhancements": [
+        {
+          "id": "knight_diabolus",
+          "name": "Knight Diabolus",
+          "points": 25,
+          "path": "armies/chaos_knights/army_rules/detachment_rules/enhancements/knight_diabolus.txt"
+        },
+        {
+          "id": "blasphemous_engine",
+          "name": "Blasphemous Engine",
+          "points": 35,
+          "path": "armies/chaos_knights/army_rules/detachment_rules/enhancements/blasphemous_engine.txt"
+        },
+        {
+          "id": "flashmetal_fusion",
+          "name": "Flashmetal Fusion",
+          "points": 35,
+          "path": "armies/chaos_knights/army_rules/detachment_rules/enhancements/flashmetal_fusion.txt"
+        },
+        {
+          "id": "bestial_aspect",
+          "name": "Bestial Aspect",
+          "points": 20,
+          "path": "armies/chaos_knights/army_rules/detachment_rules/enhancements/bestial_aspect.txt"
+        }
+      ]
+    }
+  ],
+
+  "abilities": {
+    "army_rules": {
+      "harbingers_of_dread": {
+        "name": "Harbingers Of Dread",
+        "path": "armies/chaos_knights/army_rules/harbingers_of_dread.txt"
+      },
+      "super_heavy_walker": {
+        "name": "Super-Heavy Walker",
+        "path": "armies/chaos_knights/army_rules/super_heavy_walker.txt"
+      },
+      "dreadblades": {
+        "name": "Dreadblades",
+        "path": "armies/chaos_knights/army_rules/dreadblades.txt"
+      }
+    },
+
+    "detachment_rules": {
+      "malefic_surge": {
+        "name": "Malefic Surge",
+        "path": "armies/chaos_knights/army_rules/detachment_rules/malefic_surge.txt"
+      }
+    },
+
+    "abilities": {
+      "vortex_terrors": {
+        "name": "Vortex Terrors (Psychic)",
+        "path": "armies/chaos_knights/abilities/vortex_terrors.txt"
+      },
+      "warp_storms": {
+        "name": "Warp Storms (Psychic)",
+        "path": "armies/chaos_knights/abilities/warp_storms.txt"
+      },
+      "obsessive_ruthlessness": {
+        "name": "Obsessive Ruthlessness",
+        "path": "armies/chaos_knights/abilities/obsessive_ruthlessness.txt"
+      },
+      "taskmaster": {
+        "name": "Taskmaster (Aura)",
+        "path": "armies/chaos_knights/abilities/taskmaster.txt"
+      },
+      "karnivore": {
+        "name": "Karnivore",
+        "path": "armies/chaos_knights/abilities/karnivore.txt"
+      }
+    }
+  },
+
+  "units": [
+    { "unit_id": "knight_abominant",
+      "unit_name": "Knight Abominant",
+      "points_range": [355, 355],
+      "unit_range": [1, 1],
+      "models": [
+        {
+          "model_id": "knight_abominant",
+          "model_name": "Knight Abominant",
+          "model_range": [1, 1],
+
+          "stats": {
+            "m": 10,
+            "t": 11,
+            "sv": 3,
+            "w": 26,
+            "ld": 6,
+            "oc": 10,
+            "invuln": 5
+          },
+
+          "weapons": [
+            {
+              "weapon_id": "diabolus_heavy_stubber",
+              "type": "ranged",
+              "weapon_name": "Diabolus heavy stubber",
+              "profiles": [
+                {
+                  "profile_id": "diabolus_heavy_stubber_standard",
+                  "profile_name": "Standard",
+                  "range": 36,
+                  "attacks": 3,
+                  "to_hit": 3,
+                  "strength": 5,
+                  "ap": 0,
+                  "damage": 1,
+                  "abilities": ["rapid_fire_3"]
+                }
+              ]
+            },
+            {
+              "weapon_id": "volkite_combustor",
+              "type": "ranged",
+              "weapon_name": "Volkie combustor",
+              "profiles": [
+                {
+                  "profile_id": "volkite_combustor_standard",
+                  "profile_name": "Standard",
+                  "range": 30,
+                  "attacks": 12,
+                  "to_hit": 3,
+                  "strength": 12,
+                  "ap": 0,
+                  "damage": 3,
+                  "abilities": ["devastating_wounds"]
+                }
+              ]
+            },
+            {
+              "weapon_id": "balemace",
+              "type": "melee",
+              "weapon_name": "Balemace",
+              "profiles": [
+                {
+                  "profile_id": "balemace_standard",
+                  "profile_name": "Standard",
+                  "range": "melee",
+                  "attacks": 3,
+                  "to_hit": 3,
+                  "strength": 8,
+                  "ap": -1,
+                  "damage": 2,
+                  "abilities": ["extra_attacks"]
+                }
+              ]
+            },
+            {
+              "weapon_id": "electroscourge",
+              "type": "melee",
+              "weapon_name": "Electroscourge",
+              "profiles": [
+                {
+                  "profile_id": "electroscourge_standard",
+                  "profile_name": "Standard",
+                  "range": "melee",
+                  "attacks": 9,
+                  "to_hit": 3,
+                  "strength": 10,
+                  "ap": -2,
+                  "damage": 3,
+                  "abilities": ["sustained_hits_1"]
+                }
+              ]
+            }
+          ],
+
+          "weapon_options": [
+            {
+              "group": "group 1",
+              "choices": ["balemace"]
+            },
+            {
+              "group": "group 2",
+              "choices": ["electroscourge"]
+            },
+            {
+              "group": "group 3",
+              "choices": ["diabolus_heavy_stubber"]
+            },
+            {
+              "group": "group 4",
+              "choices": ["volkite_combustor"]
+            }
+          ],
+
+          "wargear": [],
+
+          "wargear_options": []
+        }
+      ],
+
+      "abilities": {
+        "core":[
+        "Deadly Demise D6",
+        "Harbingers of Dread",
+        "Super-heavy Walker"
+        ],
+        "personal":[
+        "vortex_terrors",
+        "warp_storms"
+      ]}
+    },
+    { "unit_id": "assault_intercessors_with_jump_packs",
+      "unit_name": "Assault Intercessors With Jump Packs",
+      "points_range": [90, 170],
+      "unit_range": [5, 10],
+      "models": [
+        {
+          "model_id": "assault_intercessor_sergeant_with_jump_pack",
+          "model_name": "Assault Intercessor Sergeant With Jump Pack",
+          "model_range": [1, 1],
+
+          "stats": {
+          "m": 12,
+          "t": 4,
+          "sv": 3,
+          "w": 2,
+          "ld": 6,
+          "oc": 1,
+          "invuln": "N/A"
+          },
+
+          "weapons": [
+            {
+              "weapon_id": "astartes_chainsword",
+              "type": "melee",
+              "weapon_name": "Astartes Chainsword",
+              "profiles": [
+                {
+                  "profile_id": "astartes_chainsword_standard",
+                  "profile_name": "Standard",
+                  "range": "melee",
+                  "attacks": 4,
+                  "to_hit": 3,
+                  "strength": 4,
+                  "ap": -1,
+                  "damage": 1,
+                  "abilities": []
+                }
+              ]
+            },
+            {
+              "weapon_id": "power_weapon",
+              "type": "melee",
+              "weapon_name": "Power Weapon",
+              "profiles": [
+                {
+                  "profile_id": "power_weapon_standard",
+                  "profile_name": "Standard",
+                  "range": "melee",
+                  "attacks": 4,
+                  "to_hit": 3,
+                  "strength": 5,
+                  "ap": -2,
+                  "damage": 1,
+                  "abilities": []
+                }
+              ]
+            },
+            {
+              "weapon_id": "power_fist",
+              "type": "melee",
+              "weapon_name": "Power Fist",
+              "profiles": [
+                {
+                  "profile_id": "power_fist_standard",
+                  "profile_name": "Standard",
+                  "range": "melee",
+                  "attacks": 3,
+                  "to_hit": 3,
+                  "strength": 8,
+                  "ap": -2,
+                  "damage": 2,
+                  "abilities": []
+                }
+              ]
+            },
+            {
+              "weapon_id": "heavy_bolt_pistol",
+              "type": "ranged",
+              "weapon_name": "Heavy Bolt Pistol",
+              "profiles": [
+                {
+                  "profile_id": "heavy_bolt_pistol_standard",
+                  "profile_name": "Standard",
+                  "range": 18,
+                  "attacks": 1,
+                  "to_hit": 3,
+                  "strength": 4,
+                  "ap": -1,
+                  "damage": 1,
+                  "abilities": ["pistol"]
+                }
+              ]
+            },
+            {
+              "weapon_id": "hand_flamer",
+              "type": "ranged",
+              "weapon_name": "Hand Flamer",
+              "profiles": [
+                {
+                  "profile_id": "hand_flamer_standard",
+                  "profile_name": "Standard",
+                  "range": 12,
+                  "attacks": "D6",
+                  "to_hit": "N/A",
+                  "strength": 3,
+                  "ap": 0,
+                  "damage": 1,
+                  "abilities": ["pistol","ignores_cover","torrent"]
+                }
+              ]
+            },
+            {
+              "weapon_id": "plasma_pistol",
+              "type": "ranged",
+              "weapon_name": "Plasma Pistol",
+              "profiles": [
+                {
+                  "profile_id": "plasma_pistol_standard",
+                  "profile_name": "Standard",
+                  "range": 12,
+                  "attacks": 1,
+                  "to_hit": 3,
+                  "strength": 7,
+                  "ap": -2,
+                  "damage": 1,
+                  "abilities": ["pistol"]
+                },
+                {
+                  "profile_id": "plasma_pistol_supercharge",
+                  "profile_name": "Supercharge",
+                  "range": 12,
+                  "attacks": 1,
+                  "to_hit": 3,
+                  "strength": 8,
+                  "ap": -3,
+                  "damage": 2,
+                  "abilities": ["pistol", "hazardous"]
+                }
+              ]
+            }
+          ],
+
+          "weapon_options": [
+            {
+              "group": "group 1",
+              "choices": ["astartes_chainsword","power_weapon","power_fist"]
+            },
+            {
+              "group": "group 2",
+              "choices": ["heavy_bolt_pistol", "plasma_pistol", "hand_flamer"]
+            }
+          ],
+
+          "wargear": [],
+
+          "wargear_options": []
+        },
+        {
+          "model_id": "assault_intercessor_with_jump_pack",
+          "model_name": "Assault Intercessor With Jump Pack",
+          "model_range": [4, 9],
+
+          "stats": {
+          "m": 12,
+          "t": 4,
+          "sv": 3,
+          "w": 2,
+          "ld": 6,
+          "oc": 1,
+          "invuln": "N/A"
+          },
+
+          "weapons": [
+            {
+              "weapon_id": "astartes_chainsword",
+              "type": "melee",
+              "weapon_name": "Astartes Chainsword",
+              "profiles": [
+                {
+                  "profile_id": "astartes_chainsword_standard",
+                  "profile_name": "Standard",
+                  "range": "melee",
+                  "attacks": 4,
+                  "to_hit": 3,
+                  "strength": 4,
+                  "ap": -1,
+                  "damage": 1,
+                  "abilities": []
+                }
+              ]
+            },
+            {
+              "weapon_id": "heavy_bolt_pistol",
+              "type": "ranged",
+              "weapon_name": "Heavy Bolt Pistol",
+              "profiles": [
+                {
+                  "profile_id": "heavy_bolt_pistol_standard",
+                  "profile_name": "Standard",
+                  "range": 18,
+                  "attacks": 1,
+                  "to_hit": 3,
+                  "strength": 4,
+                  "ap": -1,
+                  "damage": 1,
+                  "abilities": ["pistol"]
+                }
+              ]
+            },
+            {
+              "weapon_id": "plasma_pistol",
+              "type": "ranged",
+              "weapon_name": "Plasma Pistol",
+              "profiles": [
+                {
+                  "profile_id": "plasma_pistol_standard",
+                  "profile_name": "Standard",
+                  "range": 12,
+                  "attacks": 1,
+                  "to_hit": 3,
+                  "strength": 7,
+                  "ap": -2,
+                  "damage": 1,
+                  "abilities": ["pistol"]
+                },
+                {
+                  "profile_id": "plasma_pistol_supercharge",
+                  "profile_name": "Supercharge",
+                  "range": 12,
+                  "attacks": 1,
+                  "to_hit": 3,
+                  "strength": 8,
+                  "ap": -3,
+                  "damage": 2,
+                  "abilities": ["pistol", "hazardous"]
+                }
+              ]
+            }
+          ],
+
+          "weapon_options": [
+            {
+              "group": "group 1",
+              "choices": ["astartes_chainsword"]
+            },
+            {
+              "group": "group 2",
+              "choices": ["heavy_bolt_pistol", "plasma_pistol"]
+            }
+          ],
+
+          "wargear": [],
+
+          "wargear_options": []
+        }
+      ],
+
+
+      "abilities": {
+        "core":[
+        "Oath of Moment",
+        "Deep Strike"
+        ],
+        "personal":[
+        "hammer_of_wrath"
+      ]}
+    }
+  ]
+}

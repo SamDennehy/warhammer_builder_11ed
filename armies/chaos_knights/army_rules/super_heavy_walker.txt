@@ -1,0 +1,7 @@
+Super-heavy Walker
+
+Each time a model with this ability makes a Normal, Advance or Fall Back move, it can move through models (excluding TITANIC models) and sections of terrain features that are 4" or less in height. When doing so:
+
+It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them.
+
+It can also move through sections of terrain features that are more than 4" in height, but if it does, after it has moved, roll one D6: on a 1, that model is Battle-shocked.
