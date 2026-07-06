@@ -7,10 +7,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Test</h1>
+    <h1>Warhammer 40K 11th Edition Army Builder</h1>
 
-    <form action="{{ url_for('builder') }}">
-    <button type="submit">Go to builder</button>
-</form>
+    <form>
+        <select id="faction_select">
+            <option value="">Select a Faction</option>
+            {% for faction in factions %}
+                <option value="{{ faction }}">{{ faction }}</option>
+            {% endfor %}
+        </select>
+        <button type="button" onclick="submitFaction()">Submit</button>
+    </form>
+    <div id="faction_data">
+        <form>
+            <select id="datasheet_select">
+                <option value="">Select a Datasheet</option>
+                {% for datasheet in datasheets %}
+                    <option value="{{ datasheet }}">{{ datasheet }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -1,2 +1,0 @@
-Warp Storms (Psychic): 
-At the end of your Movement phase, roll one D6 for each enemy unit within 9" of one or more models with this ability: on a 3+, that enemy unit suffers D3 mortal wounds.
