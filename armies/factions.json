@@ -1,0 +1,13 @@
+{
+    "space_marines": {
+        "faction_name": "Space Marines",
+        "faction_id": "space_marines",
+        "faction_folder": "armies/space_marines"
+    },
+
+    "chaos_knights": {
+        "faction_name": "Chaos Knights",
+        "faction_id": "chaos_knights",
+        "faction_folder": "armies/chaos_knights"
+    }
+}

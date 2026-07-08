@@ -1,269 +1,271 @@
-{
-    "unit_id": "assault_intercessors_with_jump_packs",
-    "unit_name": "Assault Intercessors With Jump Packs",
-    "points_range": [85, 160],
-    "model_count_range": [5, 10],
-    "models": [
+[
     {
-        "model_id": "assault_intercessor_sergeant_with_jump_pack",
-        "model_name": "Assault Intercessor Sergeant With Jump Pack",
-        "model_range": [1, 1],
+        "datasheet_id": "assault_intercessors_with_jump_packs",
+        "datasheet_name": "Assault Intercessors With Jump Packs",
+        "points_range": [85, 160],
+        "model_count_range": [5, 10],
+        "models": [
+        {
+            "model_id": "assault_intercessor_sergeant_with_jump_pack",
+            "model_name": "Assault Intercessor Sergeant With Jump Pack",
+            "model_range": [1, 1],
 
-        "stats": {
-        "m": 12,
-        "t": 4,
-        "sv": 3,
-        "w": 2,
-        "ld": 6,
-        "oc": 1,
-        "invuln": "N/A"
-        },
+            "stats": {
+            "m": 12,
+            "t": 4,
+            "sv": 3,
+            "w": 2,
+            "ld": 6,
+            "oc": 1,
+            "invuln": "N/A"
+            },
 
-        "weapons": [
-        {
-            "weapon_id": "astartes_chainsword",
-            "type": "melee",
-            "weapon_name": "Astartes Chainsword",
-            "profiles": [
+            "weapons": [
             {
-                "profile_id": "astartes_chainsword_standard",
-                "profile_name": "Standard",
-                "range": "melee",
-                "attacks": 4,
-                "to_hit": 3,
-                "strength": 4,
-                "ap": -1,
-                "damage": 1,
-                "abilities": []
-            }
-            ]
-        },
-        {
-            "weapon_id": "power_weapon",
-            "type": "melee",
-            "weapon_name": "Power Weapon",
-            "profiles": [
-            {
-                "profile_id": "power_weapon_standard",
-                "profile_name": "Standard",
-                "range": "melee",
-                "attacks": 4,
-                "to_hit": 3,
-                "strength": 5,
-                "ap": -2,
-                "damage": 1,
-                "abilities": []
-            }
-            ]
-        },
-        {
-            "weapon_id": "power_fist",
-            "type": "melee",
-            "weapon_name": "Power Fist",
-            "profiles": [
-            {
-                "profile_id": "power_fist_standard",
-                "profile_name": "Standard",
-                "range": "melee",
-                "attacks": 3,
-                "to_hit": 3,
-                "strength": 8,
-                "ap": -2,
-                "damage": 2,
-                "abilities": []
-            }
-            ]
-        },
-        {
-            "weapon_id": "heavy_bolt_pistol",
-            "type": "ranged",
-            "weapon_name": "Heavy Bolt Pistol",
-            "profiles": [
-            {
-                "profile_id": "heavy_bolt_pistol_standard",
-                "profile_name": "Standard",
-                "range": 18,
-                "attacks": 1,
-                "to_hit": 3,
-                "strength": 4,
-                "ap": -1,
-                "damage": 1,
-                "abilities": ["pistol"]
-            }
-            ]
-        },
-        {
-            "weapon_id": "hand_flamer",
-            "type": "ranged",
-            "weapon_name": "Hand Flamer",
-            "profiles": [
-            {
-                "profile_id": "hand_flamer_standard",
-                "profile_name": "Standard",
-                "range": 12,
-                "attacks": "D6",
-                "to_hit": "N/A",
-                "strength": 3,
-                "ap": 0,
-                "damage": 1,
-                "abilities": ["pistol","ignores_cover","torrent"]
-            }
-            ]
-        },
-        {
-            "weapon_id": "plasma_pistol",
-            "type": "ranged",
-            "weapon_name": "Plasma Pistol",
-            "profiles": [
-            {
-                "profile_id": "plasma_pistol_standard",
-                "profile_name": "Standard",
-                "range": 12,
-                "attacks": 1,
-                "to_hit": 3,
-                "strength": 7,
-                "ap": -2,
-                "damage": 1,
-                "abilities": ["pistol"]
+                "weapon_id": "astartes_chainsword",
+                "type": "melee",
+                "weapon_name": "Astartes Chainsword",
+                "profiles": [
+                {
+                    "profile_id": "astartes_chainsword_standard",
+                    "profile_name": "Standard",
+                    "range": "melee",
+                    "attacks": 4,
+                    "to_hit": 3,
+                    "strength": 4,
+                    "ap": -1,
+                    "damage": 1,
+                    "abilities": []
+                }
+                ]
             },
             {
-                "profile_id": "plasma_pistol_supercharge",
-                "profile_name": "Supercharge",
-                "range": 12,
-                "attacks": 1,
-                "to_hit": 3,
-                "strength": 8,
-                "ap": -3,
-                "damage": 2,
-                "abilities": ["pistol", "hazardous"]
-            }
-            ]
-        }
-        ],
-
-        "weapon_options": [
-        {
-            "group": "group 1",
-            "choices": ["astartes_chainsword","power_weapon","power_fist"]
-        },
-        {
-            "group": "group 2",
-            "choices": ["heavy_bolt_pistol", "plasma_pistol", "hand_flamer"]
-        }
-        ],
-
-        "wargear": [],
-
-        "wargear_options": []
-    },
-    {
-        "model_id": "assault_intercessor_with_jump_pack",
-        "model_name": "Assault Intercessor With Jump Pack",
-        "model_range": [4, 9],
-
-        "stats": {
-        "m": 12,
-        "t": 4,
-        "sv": 3,
-        "w": 2,
-        "ld": 6,
-        "oc": 1,
-        "invuln": "N/A"
-        },
-
-        "weapons": [
-        {
-            "weapon_id": "astartes_chainsword",
-            "type": "melee",
-            "weapon_name": "Astartes Chainsword",
-            "profiles": [
-            {
-                "profile_id": "astartes_chainsword_standard",
-                "profile_name": "Standard",
-                "range": "melee",
-                "attacks": 4,
-                "to_hit": 3,
-                "strength": 4,
-                "ap": -1,
-                "damage": 1,
-                "abilities": []
-            }
-            ]
-        },
-        {
-            "weapon_id": "heavy_bolt_pistol",
-            "type": "ranged",
-            "weapon_name": "Heavy Bolt Pistol",
-            "profiles": [
-            {
-                "profile_id": "heavy_bolt_pistol_standard",
-                "profile_name": "Standard",
-                "range": 18,
-                "attacks": 1,
-                "to_hit": 3,
-                "strength": 4,
-                "ap": -1,
-                "damage": 1,
-                "abilities": ["pistol"]
-            }
-            ]
-        },
-        {
-            "weapon_id": "plasma_pistol",
-            "type": "ranged",
-            "weapon_name": "Plasma Pistol",
-            "profiles": [
-            {
-                "profile_id": "plasma_pistol_standard",
-                "profile_name": "Standard",
-                "range": 12,
-                "attacks": 1,
-                "to_hit": 3,
-                "strength": 7,
-                "ap": -2,
-                "damage": 1,
-                "abilities": ["pistol"]
+                "weapon_id": "power_weapon",
+                "type": "melee",
+                "weapon_name": "Power Weapon",
+                "profiles": [
+                {
+                    "profile_id": "power_weapon_standard",
+                    "profile_name": "Standard",
+                    "range": "melee",
+                    "attacks": 4,
+                    "to_hit": 3,
+                    "strength": 5,
+                    "ap": -2,
+                    "damage": 1,
+                    "abilities": []
+                }
+                ]
             },
             {
-                "profile_id": "plasma_pistol_supercharge",
-                "profile_name": "Supercharge",
-                "range": 12,
-                "attacks": 1,
-                "to_hit": 3,
-                "strength": 8,
-                "ap": -3,
-                "damage": 2,
-                "abilities": ["pistol", "hazardous"]
+                "weapon_id": "power_fist",
+                "type": "melee",
+                "weapon_name": "Power Fist",
+                "profiles": [
+                {
+                    "profile_id": "power_fist_standard",
+                    "profile_name": "Standard",
+                    "range": "melee",
+                    "attacks": 3,
+                    "to_hit": 3,
+                    "strength": 8,
+                    "ap": -2,
+                    "damage": 2,
+                    "abilities": []
+                }
+                ]
+            },
+            {
+                "weapon_id": "heavy_bolt_pistol",
+                "type": "ranged",
+                "weapon_name": "Heavy Bolt Pistol",
+                "profiles": [
+                {
+                    "profile_id": "heavy_bolt_pistol_standard",
+                    "profile_name": "Standard",
+                    "range": 18,
+                    "attacks": 1,
+                    "to_hit": 3,
+                    "strength": 4,
+                    "ap": -1,
+                    "damage": 1,
+                    "abilities": ["pistol"]
+                }
+                ]
+            },
+            {
+                "weapon_id": "hand_flamer",
+                "type": "ranged",
+                "weapon_name": "Hand Flamer",
+                "profiles": [
+                {
+                    "profile_id": "hand_flamer_standard",
+                    "profile_name": "Standard",
+                    "range": 12,
+                    "attacks": "D6",
+                    "to_hit": "N/A",
+                    "strength": 3,
+                    "ap": 0,
+                    "damage": 1,
+                    "abilities": ["pistol","ignores_cover","torrent"]
+                }
+                ]
+            },
+            {
+                "weapon_id": "plasma_pistol",
+                "type": "ranged",
+                "weapon_name": "Plasma Pistol",
+                "profiles": [
+                {
+                    "profile_id": "plasma_pistol_standard",
+                    "profile_name": "Standard",
+                    "range": 12,
+                    "attacks": 1,
+                    "to_hit": 3,
+                    "strength": 7,
+                    "ap": -2,
+                    "damage": 1,
+                    "abilities": ["pistol"]
+                },
+                {
+                    "profile_id": "plasma_pistol_supercharge",
+                    "profile_name": "Supercharge",
+                    "range": 12,
+                    "attacks": 1,
+                    "to_hit": 3,
+                    "strength": 8,
+                    "ap": -3,
+                    "damage": 2,
+                    "abilities": ["pistol", "hazardous"]
+                }
+                ]
             }
-            ]
-        }
-        ],
+            ],
 
-        "weapon_options": [
-        {
-            "group": "group 1",
-            "choices": ["astartes_chainsword"]
+            "weapon_options": [
+            {
+                "group": "group 1",
+                "choices": ["astartes_chainsword","power_weapon","power_fist"]
+            },
+            {
+                "group": "group 2",
+                "choices": ["heavy_bolt_pistol", "plasma_pistol", "hand_flamer"]
+            }
+            ],
+
+            "wargear": [],
+
+            "wargear_options": []
         },
         {
-            "group": "group 2",
-            "choices": ["heavy_bolt_pistol", "plasma_pistol"]
+            "model_id": "assault_intercessor_with_jump_pack",
+            "model_name": "Assault Intercessor With Jump Pack",
+            "model_range": [4, 9],
+
+            "stats": {
+            "m": 12,
+            "t": 4,
+            "sv": 3,
+            "w": 2,
+            "ld": 6,
+            "oc": 1,
+            "invuln": "N/A"
+            },
+
+            "weapons": [
+            {
+                "weapon_id": "astartes_chainsword",
+                "type": "melee",
+                "weapon_name": "Astartes Chainsword",
+                "profiles": [
+                {
+                    "profile_id": "astartes_chainsword_standard",
+                    "profile_name": "Standard",
+                    "range": "melee",
+                    "attacks": 4,
+                    "to_hit": 3,
+                    "strength": 4,
+                    "ap": -1,
+                    "damage": 1,
+                    "abilities": []
+                }
+                ]
+            },
+            {
+                "weapon_id": "heavy_bolt_pistol",
+                "type": "ranged",
+                "weapon_name": "Heavy Bolt Pistol",
+                "profiles": [
+                {
+                    "profile_id": "heavy_bolt_pistol_standard",
+                    "profile_name": "Standard",
+                    "range": 18,
+                    "attacks": 1,
+                    "to_hit": 3,
+                    "strength": 4,
+                    "ap": -1,
+                    "damage": 1,
+                    "abilities": ["pistol"]
+                }
+                ]
+            },
+            {
+                "weapon_id": "plasma_pistol",
+                "type": "ranged",
+                "weapon_name": "Plasma Pistol",
+                "profiles": [
+                {
+                    "profile_id": "plasma_pistol_standard",
+                    "profile_name": "Standard",
+                    "range": 12,
+                    "attacks": 1,
+                    "to_hit": 3,
+                    "strength": 7,
+                    "ap": -2,
+                    "damage": 1,
+                    "abilities": ["pistol"]
+                },
+                {
+                    "profile_id": "plasma_pistol_supercharge",
+                    "profile_name": "Supercharge",
+                    "range": 12,
+                    "attacks": 1,
+                    "to_hit": 3,
+                    "strength": 8,
+                    "ap": -3,
+                    "damage": 2,
+                    "abilities": ["pistol", "hazardous"]
+                }
+                ]
+            }
+            ],
+
+            "weapon_options": [
+            {
+                "group": "group 1",
+                "choices": ["astartes_chainsword"]
+            },
+            {
+                "group": "group 2",
+                "choices": ["heavy_bolt_pistol", "plasma_pistol"]
+            }
+            ],
+
+            "wargear": [],
+
+            "wargear_options": []
         }
         ],
-
-        "wargear": [],
-
-        "wargear_options": []
+        "abilities": {
+        "core":[
+        "Deep Strike"
+        ],
+        "faction":[
+        "Oath of Moment"
+        ],
+        "datasheet":[
+        "Hammer Of Wrath"
+        ]
+        }    
     }
-    ],
-    "abilities": {
-    "core":[
-    "Deep Strike"
-    ],
-    "faction":[
-    "Oath of Moment"
-    ],
-    "datasheet":[
-    "Hammer Of Wrath"
-    ]
-    }    
-}
+]

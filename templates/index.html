@@ -13,20 +13,15 @@
         <select id="faction_select">
             <option value="">Select a Faction</option>
             {% for faction in factions %}
-                <option value="{{ faction }}">{{ faction }}</option>
+                <option value="{{ factions[faction].faction_id }}">{{ factions[faction].faction_name }}</option>
             {% endfor %}
         </select>
         <button type="button" onclick="submitFaction()">Submit</button>
     </form>
     <div id="faction_data">
-        <form>
-            <select id="datasheet_select">
-                <option value="">Select a Datasheet</option>
-                {% for datasheet in datasheets %}
-                    <option value="{{ datasheet }}">{{ datasheet }}</option>
-                {% endfor %}
-            </select>
-        </form>
+        <div id="datasheet_select">
+
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
