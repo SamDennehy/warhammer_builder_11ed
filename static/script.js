@@ -18,6 +18,7 @@ async function loadFactionData(faction_id) {
             <select id="datasheet_select_input">
                 <option value="">Select a datasheet</option>
             </select>
+            <button type="button" onclick="">Submit</button>
         </form>
     `;
 
