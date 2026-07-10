@@ -12,7 +12,7 @@ def index():
 @app.route('/get_faction_datasheets_by_path', methods=['POST'])
 def getFactionDatasheetsByPath():
     data = request.get_json()
-    path = f'{data.get('path')}/datasheets.json'
+    path = f"{data.get('path')}/datasheets.json"
     with open(path, 'r') as f:
         datasheets = json.load(f)
 

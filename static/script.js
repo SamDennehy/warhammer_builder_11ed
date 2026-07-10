@@ -8,6 +8,11 @@ function submitFaction() {
     }
 }
 
+function appendUnit(datasheets, datasheet_id) {
+    const selectedDatasheet = getSelectedDatasheetById(datasheets, datasheet_id);
+    const models = getDatasheetModels(selectedDatasheet);
+}
+
 async function loadFactionData(faction_id) {
     const path = getFactionPath(faction_id);
     const datasheets = await getFactionDatasheetsByPath(path);
@@ -18,9 +23,16 @@ async function loadFactionData(faction_id) {
             <select id="datasheet_select_input">
                 <option value="">Select a datasheet</option>
             </select>
-            <button type="button" onclick="">Submit</button>
+            <button type="button" id="datasheet_submit">Submit</button>
         </form>
     `;
+
+    document.getElementById('datasheet_submit').addEventListener('click', () => {
+        const datasheet_id = document.getElementById('datasheet_select_input').value;
+        if (datasheet_id) {
+            appendUnit(datasheets, datasheet_id);
+        }
+    });
 
     const datasheetSelect = document.getElementById('datasheet_select_input');
     datasheets.forEach(datasheet => {
@@ -46,5 +58,13 @@ async function getFactionDatasheetsByPath(path) {
     });
     const datasheets = await response.json();
     return datasheets;
+}
+
+function getSelectedDatasheetById(datasheets, datasheet_id) {
+    return datasheets.find(datasheet => datasheet.datasheet_id === datasheet_id);
+}
+
+function getDatasheetModels(datasheet) {
+    return datasheet.models;
 }
 
