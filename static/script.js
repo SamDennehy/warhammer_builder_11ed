@@ -1,4 +1,6 @@
 //faction handling functions
+lastUnitId = 0;
+
 function submitFaction() {
     const factionSelect = document.getElementById('faction_select');
     const faction_id = factionSelect.value;
@@ -8,9 +10,42 @@ function submitFaction() {
     }
 }
 
+function loadModel(model, unitContainer) {
+    const stats = model.stats;
+        const movement = stats.m;
+        const toughness = stats.t;
+        const save = stats.sv;
+        const wounds = stats.w;
+        const leadership = stats.ld;
+        const oc = stats.oc;
+        const invuln = stats.invuln;
+    
+    const modelContainer = document.createElement('div');
+    modelContainer.classList.add('model-container');
+    modelContainer.innerHTML = `
+        <h3>${model.model_name}</h3>
+        <p>Movement: ${movement}</p>
+        <p>Toughness: ${toughness}</p>
+        <p>Save: ${save}</p>
+        <p>Wounds: ${wounds}</p>
+        <p>Leadership: ${leadership}</p>
+        <p>Objective Control: ${oc}</p>
+        <p>Invulnerable Save: ${invuln}</p>
+    `;
+    unitContainer.appendChild(modelContainer);
+
+
+}
+
 function appendUnit(datasheets, datasheet_id) {
     const selectedDatasheet = getSelectedDatasheetById(datasheets, datasheet_id);
     const models = getDatasheetModels(selectedDatasheet);
+    const unitContainer = document.createElement('div');
+    unitContainer.innerHTML = `<h2>${selectedDatasheet.datasheet_name}</h2>`;
+    unitContainer.id = `unit-${++lastUnitId}`;
+    unitContainer.classList.add('unit-container');
+    document.getElementById('display').appendChild(unitContainer);
+    models.forEach(model => loadModel(model, unitContainer));
 }
 
 async function loadFactionData(faction_id) {

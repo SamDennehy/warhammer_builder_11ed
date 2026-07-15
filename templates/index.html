@@ -9,24 +9,26 @@
 <body>
     <div class="split">
         <h1>Warhammer 40K 11th Edition Army Builder</h1>
-        <div class="centred" class="menu">
-            <form>
-                <select id="faction_select">
-                    <option value="">Select a Faction</option>
-                    {% for faction in factions %}
-                        <option value="{{ factions[faction].faction_id }}">{{ factions[faction].faction_name }}</option>
-                    {% endfor %}
-                </select>
-                <button type="button" onclick="submitFaction()">Submit</button>
-            </form>
-            <div id="faction_data">
-                <div id="datasheet_select">
+        <div class="builder-panels">
+            <div class="centred panel panel-left">
+                <form>
+                    <select id="faction_select">
+                        <option value="">Select a Faction</option>
+                        {% for faction in factions %}
+                            <option value="{{ factions[faction].faction_id }}">{{ factions[faction].faction_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="button" onclick="submitFaction()">Submit</button>
+                </form>
+                <div id="faction_data">
+                    <div id="datasheet_select">
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="centred" class="display">
+            <div class="centred panel panel-right" id="display">
 
+            </div>
         </div>
     </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
