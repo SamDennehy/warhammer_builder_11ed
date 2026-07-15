@@ -1,15 +1,15 @@
 class Model:
     last_id = 0
 
-    name = ""
+    model_name = ""
     model_id = ""
     model_instance_id = 0
 
     weapons = []
     wargear = []
 
-    def __init__(self, name: str, model_id: str, stats: dict):
-        self.name = name
+    def __init__(self, model_name: str, model_id: str, stats: dict):
+        self.model_name = model_name
         self.model_id = model_id
         self.stats = stats
         Model.last_id += 1
@@ -30,40 +30,34 @@ class Model:
 class Unit:
     last_id = 0
 
-    name = ""
+    unit_name = ""
     unit_id = ""
     unit_instance_id = 0
 
     models = []
 
-    def __init__(self, name: str, unit_id: str):
-        self.name = name
+    def __init__(self, unit_name: str, unit_id: str):
+        self.unit_name = unit_name
         self.unit_id = unit_id
         Unit.last_id += 1
         self.unit_instance_id = Unit.last_id
 
-    def addModel(self, model: Model):
+    def appendModel(self, model: Model):
         self.models.append(model)
 
     def getModels(self):
         return self.models
     
 class Army:
-    last_id = 0
-
-    name = ""
-    army_id = ""
-    army_instance_id = 0
+    army_name = ""
 
     units = []
+    detachments = []
 
-    def __init__(self, name: str, army_id: str):
-        self.name = name
-        self.army_id = army_id
-        Army.last_id += 1
-        self.army_instance_id = Army.last_id
+    def __init__(self, army_name: str):
+        self.army_name = army_name
 
-    def addUnit(self, unit: Unit):
+    def appendUnit(self, unit: Unit):
         self.units.append(unit)
 
     def getUnits(self):
