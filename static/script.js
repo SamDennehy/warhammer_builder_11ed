@@ -55,4 +55,35 @@ async function getFactionDatasheetsByPath(path) {
 }
 
 
-async function appendUnit(datasheets, datasheet_id) {
+async function appendUnitToArmy(datasheets, datasheet_id) {
+    let selectedDatasheet = null;
+    datasheets.forEach(datasheet => {
+        if (datasheet.datasheet_id === datasheet_id) {
+           selectedDatasheet = datasheet;
+        }
+    })
+    const models = [];
+    const datasheetModels = selectedDatasheet.models;
+    datasheetModels.forEach(datasheetModel => {
+        const min = datasheetModel.model_range[0]
+        for(let i = 0; i < min; i++){
+            const model = {
+            "model_name": datasheetModel.model_name,
+            "model_id": datasheetModel.model_id,
+            "stats": datasheetModel.stats
+            }
+            models.push(model);
+        }
+    })
+
+    const datasheet_name = selectedDatasheet.datasheet_name;
+
+    const response = await fetch('/append_unit_to_army', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ models: models , datasheet_name: datasheet_name , datasheet_id: datasheet_id}) 
+    });
+}
+

@@ -25,12 +25,10 @@ def getFactionDatasheetsByPath():
 def appendUnitToArmy():
     data = request.get_json()
     models = data.models
-    unit = Unit(data.unit_name, data.unit_id)
+    unit = Unit(data.datasheet_name, data.datasheet_id)
     for model in models:
         unit.appendModel(model.model_name, model.model_id, model.stats)
     army.appendUnit(unit)
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
