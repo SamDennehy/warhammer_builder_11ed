@@ -24,11 +24,18 @@ def getFactionDatasheetsByPath():
 @app.route('/append_unit_to_army', methods=['POST'])
 def appendUnitToArmy():
     data = request.get_json()
-    models = data.models
-    unit = Unit(data.datasheet_name, data.datasheet_id)
+    models = data.get("models", [])
+    unit = Unit(data.get("datasheet_name", []), data.get("datasheet_id", []))
     for model in models:
-        unit.appendModel(model.model_name, model.model_id, model.stats)
+        currentModel = Model(model["model_name"], model["model_id"], model["stats"])
+        unit.appendModel(currentModel)
     army.appendUnit(unit)
+    return jsonify({"success": True})
+
+@app.route('/get_army_data_as_JSON', methods=['GET'])
+def getArmyDataAsJSON():
+    return jsonify(army.to_dict())
+
 
 if __name__ == "__main__":
     app.run(debug=True)

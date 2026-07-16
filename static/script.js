@@ -9,6 +9,12 @@ function submitFaction() {
         loadFactionData(faction_id);
     }
 }
+
+async function getArmyDataAsJSON() {
+    const response = await fetch('/get_army_data_as_JSON');
+    return await response.json();
+}
+
 async function loadFactionData(faction_id) {
     const path = getFactionPath(faction_id);
     const datasheets = await getFactionDatasheetsByPath(path);
