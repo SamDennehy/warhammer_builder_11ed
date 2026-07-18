@@ -49,3 +49,27 @@ body {
   margin: 5px;
   border-radius: 3px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+

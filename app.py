@@ -10,7 +10,7 @@ army = Army("Army List")
 
 @app.route('/')
 def index():
-    return render_template('index.html', factions=factions, army=army)
+    return render_template('index.html', factions=factions)
 
 @app.route('/get_faction_datasheets_by_path', methods=['POST'])
 def getFactionDatasheetsByPath():
