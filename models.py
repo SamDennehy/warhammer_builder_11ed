@@ -1,13 +1,14 @@
 class Model:
     last_id = 0
 
-    def __init__(self, model_name: str, model_id: str, stats: dict):
+    def __init__(self, model_name: str, model_id: str, stats: dict, count: int, weapons: list, wargear: list):
         self.model_name = model_name
         self.model_id = model_id
         self.stats = stats
         self.model_instance_id = 0
-        self.weapons = []
-        self.wargear = []
+        self.weapons = weapons
+        self.wargear = wargear
+        self.count = count
         Model.last_id += 1
         self.model_instance_id = Model.last_id
 
@@ -29,6 +30,7 @@ class Model:
             "model_id": self.model_id,
             "stats": self.stats,
             "model_instance_id": self.model_instance_id,
+            "count": self.count,
             "weapons": self.weapons,
             "wargear": self.wargear,
         }

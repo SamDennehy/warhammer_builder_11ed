@@ -30,7 +30,7 @@ async function renderArmy() {
 
 function buildModelCard(model){
     return `<div class="model-card">
-                <h4>${model.model_name}</h4>
+                <h4>${model.count}x${model.model_name}</h4>
                 <p>Model ID: ${model.model_id}</p>
                 <p>Model Instance ID: ${model.model_instance_id}</p>
                 <table>
@@ -49,15 +49,22 @@ function buildModelCard(model){
                         `).join('')}
                     </tr>
                 </table>
+                <form>
+                ${model.weapons.map(weapon => {
+                    return `<p><label for="model_weapons_${model.model_instance_id}">${weapon[0]}</label><input type="number" id="model_weapons_${model.model_instance_id}_${weapon[1]}" name="model_weapons_${model.model_instance_id}_${weapon[1]}" value="0" min="0"><p>`;
+                }).join('')}
+                </form>
             </div>`;
 }
 
 function buildUnitCard(unit){
+    const totalModels = unit.models.reduce((sum, model) => sum + Number(model.count || 0), 0);
+
     return `<div class="unit-card">
                 <h3>${unit.unit_name}</h3>
                 <p>Unit ID: ${unit.unit_id}</p>
                 <p>Unit Instance ID: ${unit.unit_instance_id}</p>
-                <p>Models: ${unit.models.length}</p>
+                <p>Models: ${totalModels}</p>
                 <div class="unit-models">
                     ${unit.models.map(model => buildModelCard(model)).join('')}
                 </div>
@@ -138,15 +145,15 @@ async function appendUnitToArmy(datasheets, datasheet_id) {
     const models = [];
     const datasheetModels = selectedDatasheet.models;
     datasheetModels.forEach(datasheetModel => {
-        const min = datasheetModel.model_range[0];
-        for (let i = 0; i < min; i++) {
-            const model = {
-                "model_name": datasheetModel.model_name,
-                "model_id": datasheetModel.model_id,
-                "stats": datasheetModel.stats
-            };
-            models.push(model);
-        }
+        const model = {
+            "model_name": datasheetModel.model_name,
+            "model_id": datasheetModel.model_id,
+            "stats": datasheetModel.stats,
+            "count": datasheetModel.model_range[0],
+            "weapons": datasheetModel.weapon_options,
+            "wargear": datasheetModel.wargear_options
+        };
+        models.push(model);
     });
 
     const datasheet_name = selectedDatasheet.datasheet_name;

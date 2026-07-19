@@ -143,16 +143,14 @@
             ],
 
             "weapon_options": [
-            {
-                "group": "group 1",
-                "choices": ["astartes_chainsword","power_weapon","power_fist"]
-            },
-            {
-                "group": "group 2",
-                "choices": ["heavy_bolt_pistol", "plasma_pistol", "hand_flamer"]
-            }
+                ["Astartes Chainsword", "astartes_chainsword", 0],
+                ["Power Weapon", "power_weapon", 0],
+                ["Power Fist", "power_fist", 0],
+                ["Heavy Bolt Pistol", "heavy_bolt_pistol", 1],
+                ["Plasma Pistol", "plasma_pistol", 1],
+                ["Hand Flamer", "hand_flamer", 1]
             ],
-
+            
             "wargear": [],
 
             "wargear_options": []
@@ -241,14 +239,9 @@
             ],
 
             "weapon_options": [
-            {
-                "group": "group 1",
-                "choices": ["astartes_chainsword"]
-            },
-            {
-                "group": "group 2",
-                "choices": ["heavy_bolt_pistol", "plasma_pistol"]
-            }
+                ["Astartes Chainsword", "astartes_chainsword", 0],
+                ["Heavy Bolt Pistol", "heavy_bolt_pistol", 1],
+                ["Plasma Pistol", "plasma_pistol", 1]   
             ],
 
             "wargear": [],

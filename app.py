@@ -27,7 +27,7 @@ def appendUnitToArmy():
     models = data.get("models", [])
     unit = Unit(data.get("datasheet_name", []), data.get("datasheet_id", []))
     for model in models:
-        currentModel = Model(model["model_name"], model["model_id"], model["stats"])
+        currentModel = Model(model["model_name"], model["model_id"], model["stats"], model["count"], model["weapons"], model["wargear"])
         unit.appendModel(currentModel)
     army.appendUnit(unit)
     return jsonify({"success": True})
