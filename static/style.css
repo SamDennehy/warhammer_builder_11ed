@@ -168,6 +168,33 @@ button:hover {
   margin-top: 2rem;
 }
 
+#validate-army-button {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+#validation-result {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  background: rgba(12, 17, 41, 0.8);
+}
+
+#validation-result.valid {
+  border-color: #56d6a0;
+  color: #a5f1c9;
+}
+
+#validation-result.invalid {
+  border-color: #ff789e;
+  color: #ffc1d1;
+}
+
+#validation-result ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
 .unit-card {
   overflow: hidden;
   border: 1px solid #364475;
@@ -176,11 +203,29 @@ button:hover {
   box-shadow: 0 12px 30px rgba(1, 3, 16, 0.35);
 }
 
-.unit-card > h3 {
-  margin: 0;
+.unit-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 1rem 1.25rem 0.35rem;
+}
+
+.unit-card-header h3 {
+  margin: 0;
   color: #eef0ff;
   font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.unit-toggle {
+  flex: 0 0 auto;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.68rem;
+}
+
+.unit-card-content[hidden] {
+  display: none;
 }
 
 .unit-card > p {
@@ -214,6 +259,26 @@ button:hover {
   margin: 0;
   color: #9da8d0;
   font-size: 0.72rem;
+}
+
+.unit-options {
+  margin: 0 1.25rem 1rem;
+  padding-top: 0.25rem;
+}
+
+.unit-options p {
+  display: grid;
+  grid-template-columns: 1fr 4rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: #e9edff;
+  font-size: 0.82rem;
+}
+
+.unit-options input {
+  min-height: 2.2rem;
+  padding: 0.35rem;
 }
 
 .model-card form {

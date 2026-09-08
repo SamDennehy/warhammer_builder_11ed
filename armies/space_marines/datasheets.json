@@ -43,6 +43,10 @@
                 "weapon_id": "power_weapon",
                 "type": "melee",
                 "weapon_name": "Power Weapon",
+                "limit": {
+                    "type": "per_model",
+                    "amount": 1
+                },
                 "profiles": [
                 {
                     "profile_id": "power_weapon_standard",
@@ -61,6 +65,10 @@
                 "weapon_id": "power_fist",
                 "type": "melee",
                 "weapon_name": "Power Fist",
+                "limit": {
+                    "type": "per_model",
+                    "amount": 1
+                },
                 "profiles": [
                 {
                     "profile_id": "power_fist_standard",
@@ -175,6 +183,10 @@
                 "weapon_id": "astartes_chainsword",
                 "type": "melee",
                 "weapon_name": "Astartes Chainsword",
+                "limit": {
+                    "type": "per_model",
+                    "amount": 1
+                },
                 "profiles": [
                 {
                     "profile_id": "astartes_chainsword_standard",
@@ -193,6 +205,10 @@
                 "weapon_id": "heavy_bolt_pistol",
                 "type": "ranged",
                 "weapon_name": "Heavy Bolt Pistol",
+                "limit": {
+                    "type": "per_model",
+                    "amount": 1
+                },
                 "profiles": [
                 {
                     "profile_id": "heavy_bolt_pistol_standard",
@@ -211,6 +227,12 @@
                 "weapon_id": "plasma_pistol",
                 "type": "ranged",
                 "weapon_name": "Plasma Pistol",
+                "limit": {
+                    "type": "per_models",
+                    "models": 5,
+                    "amount": 1,
+                    "rounding": "floor"
+                },
                 "profiles": [
                 {
                     "profile_id": "plasma_pistol_standard",
@@ -247,6 +269,36 @@
             "wargear": [],
 
             "wargear_options": []
+        }
+        ],
+        "weapon_groups": [
+        {
+            "group_id": "sergeant_melee_weapon",
+            "group_name": "Sergeant melee weapon",
+            "eligible_models": ["assault_intercessor_sergeant_with_jump_pack"],
+            "limit": {"type": "per_model", "amount": 1},
+            "options": ["astartes_chainsword", "power_weapon", "power_fist"]
+        },
+        {
+            "group_id": "sergeant_pistol",
+            "group_name": "Sergeant pistol",
+            "eligible_models": ["assault_intercessor_sergeant_with_jump_pack"],
+            "limit": {"type": "per_model", "amount": 1},
+            "options": ["heavy_bolt_pistol", "plasma_pistol", "hand_flamer"]
+        },
+        {
+            "group_id": "marine_melee_weapon",
+            "group_name": "Marine melee weapon",
+            "eligible_models": ["assault_intercessor_with_jump_pack"],
+            "limit": {"type": "per_model", "amount": 1},
+            "options": ["astartes_chainsword"]
+        },
+        {
+            "group_id": "marine_pistol",
+            "group_name": "Marine pistol",
+            "eligible_models": ["assault_intercessor_with_jump_pack"],
+            "limit": {"type": "per_model", "amount": 1},
+            "options": ["heavy_bolt_pistol", "plasma_pistol"]
         }
         ],
         "abilities": {
